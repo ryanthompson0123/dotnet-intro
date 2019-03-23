@@ -1,0 +1,86 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": ".NET Core Launch (ReactApp)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build-react-app",
+      "program": "${workspaceFolder}/CodeCamp.ReactApp/bin/Debug/netcoreapp2.2/CodeCamp.ReactApp.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "stopAtEntry": false,
+      "launchBrowser": {
+        "enabled": true,
+        "args": "${auto-detect-url}",
+        "windows": {
+          "command": "cmd.exe",
+          "args": "/C start ${auto-detect-url}"
+        },
+        "osx": {
+          "command": "open"
+        },
+        "linux": {
+          "command": "xdg-open"
+        }
+      },
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "sourceFileMap": {
+        "/Views": "${workspaceFolder}/CodeCamp.ReactApp/Views"
+      }
+    },
+    {
+      "name": ".NET Core Launch (RazorApp)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build-razor-app",
+      "program": "${workspaceFolder}/CodeCamp.RazorApp/bin/Debug/netcoreapp2.2/CodeCamp.RazorApp.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "stopAtEntry": false,
+      "launchBrowser": {
+        "enabled": true,
+        "args": "${auto-detect-url}",
+        "windows": {
+          "command": "cmd.exe",
+          "args": "/C start ${auto-detect-url}"
+        },
+        "osx": {
+          "command": "open"
+        },
+        "linux": {
+          "command": "xdg-open"
+        }
+      },
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "sourceFileMap": {
+        "/Views": "${workspaceFolder}/CodeCamp.RazorApp/Views"
+      }
+    },
+    {
+      "name": ".NET Core Launch (ConsoleApp)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build-console-app",
+      "program": "${workspaceFolder}/CodeCamp.ConsoleApp/bin/Debug/netcoreapp2.2/CodeCamp.ConsoleApp.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "console": "internalConsole",
+      "stopAtEntry": false,
+      "internalConsoleOptions": "openOnSessionStart"
+    },
+    {
+      "name": ".NET Core Attach",
+      "type": "coreclr",
+      "request": "attach",
+      "processId": "${command:pickProcess}"
+    }
+  ]
+}
