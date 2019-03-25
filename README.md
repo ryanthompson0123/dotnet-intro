@@ -62,7 +62,8 @@ Product myProduct = null; // No problem
 #### Accessors are a language construct
 
 ```C#
-public class Product {
+public class Product
+{
 	public string Name { get; set; }
 	public string Category { get; set; } = "General";
 }
@@ -198,7 +199,8 @@ public static void HandleOnlyAircraft(Vehicle anObject)
 old way
 
 ```C#
-public static Certification GetRequiredCertification(Vehicle vehicle) {
+public static Certification GetRequiredCertification(Vehicle vehicle)
+{
 	var aircraft = vehicle as Aircraft;
 	if (aircraft != null) {
 		if (aircraft.EngineType == AircraftEngineType.Turbojet &&
@@ -219,9 +221,10 @@ new way
 
 ```C#
 
-public static Certification GetRequiredCertification(Vehicle vehicle) {
+public static Certification GetRequiredCertification(Vehicle vehicle)
+{
 	switch (vehicle) {
-		case Aircraft a when a.EngineType == AircraftEngineType.Turbojet && 										a.EngineCount == 4:
+		case Aircraft a when a.EngineType == AircraftEngineType.Turbojet && a.EngineCount == 4:
 			return Certification.JumboJets;
 		case Aircraft a:
 			return Certification.GeneralAircraft;
@@ -229,8 +232,7 @@ public static Certification GetRequiredCertification(Vehicle vehicle) {
 			return Certification.Ships;
 		case Watercraft w:
 			return Certification.Boats;
-		case GroundVehicle g when g.WheelCount > 6 ||
-										  g.GrossVehicleWeightRating > 10000:
+		case GroundVehicle g when g.WheelCount > 6 || g.GrossVehicleWeightRating > 10000:
 			return Certification.OversizeVehicles;
 		default:
 			return Certification.None;
@@ -270,12 +272,12 @@ switch statements
 public static int CertificationCostNew(Certification certification) =>
 	certification switch
 	{
-		Certification.JumboJets 			=> 100000,
-		Certification.GeneralAircraft 	=> 25000,
-		Certification.Ships 				=> 20000,
-		Certification.Boats 				=> 5000,
-		Certification.OversizeVehicles 	=> 5000,
-		Certification.None 					=> 0,
+		Certification.JumboJets 		=> 100000,
+		Certification.GeneralAircraft 	    	=> 25000,
+		Certification.Ships 			=> 20000,
+		Certification.Boats 			=> 5000,
+		Certification.OversizeVehicles 	    	=> 5000,
+		Certification.None 			=> 0,
 		_ => throw new ArgumentException(message: "invalid enum value")
 	};
 ```
@@ -317,14 +319,14 @@ pattern match
 
 ```C#
 public string RockPaperScissors(string first, string second)
-=> (first, second) switch
-{
-("rock", "paper") => "rock is covered by paper. Paper wins.",
-("rock", "scissors") => "rock breaks scissors. Rock wins.",
-("paper", "rock") => "paper covers rock. Paper wins.",
-("paper", "scissors") => "paper is cut by scissors. Scissors wins.",
-("scissors", "rock") => "scissors is broken by rock. Rock wins.",
-("scissors", "paper") => "scissors cuts paper. Scissors wins.",
-(_, _) => "tie"
-};
+	=> (first, second) switch
+	{
+		("rock", "paper") => "rock is covered by paper. Paper wins.",
+		("rock", "scissors") => "rock breaks scissors. Rock wins.",
+		("paper", "rock") => "paper covers rock. Paper wins.",
+		("paper", "scissors") => "paper is cut by scissors. Scissors wins.",
+		("scissors", "rock") => "scissors is broken by rock. Rock wins.",
+		("scissors", "paper") => "scissors cuts paper. Scissors wins.",
+		(_, _) => "tie"
+	};
 ```
