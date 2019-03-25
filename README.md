@@ -180,7 +180,7 @@ public static void HandleOnlyAircraft(Vehicle anObject)
 {
 	var aircraft = anObject as Aircraft;
 	if (aircraft == null) return;
-	Console.WriteLine(aircraft.EngineCount);
+	Console.WriteLine(aircraft.EngineCount);
 }
 ```
 
@@ -190,7 +190,7 @@ New inverse
 public static void HandleOnlyAircraft(Vehicle anObject)
 {
 	if (!(anObject is Aircraft aircraft)) return;
-	Console.WriteLine(aircraft.EngineType);
+	Console.WriteLine(aircraft.EngineType);
 }
 ```
 
@@ -207,9 +207,9 @@ public static Certification GetRequiredCertification(Vehicle vehicle)
 				aircraft.EngineCount == 4) {
 			return Certification.JumboJets;
 		}
-		return Certification.GeneralAircraft;
+		return Certification.GeneralAircraft;
 	}
-	var watercraft = vehicle as Watercraft;
+	var watercraft = vehicle as Watercraft;
 	if (watercraft != null) {
 		return watercraft.Tonnage > 10000 ?
 			Certification.Ships : Certification.Boats;
